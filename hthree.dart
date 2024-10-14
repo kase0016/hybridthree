@@ -32,20 +32,16 @@ void main() {
   {"first":"Adam", "last":"Robillard", "email":"robilla@algonquincollege.com"}
 ]''';
 
-  // Convert the JSON string into a List<Map<String, String>>
   List<dynamic> jsonData = jsonDecode(json);
   List<Map<String, String>> studentsList = List<Map<String, String>>.from(
       jsonData.map((item) => Map<String, String>.from(item)));
 
-  // Pass the List<Map<String, String>> to the Students class constructor
   Student students = Student(studentsList);
 
-  // Call the sort method to sort by first name
   students.sort("first");
   print("\n");
   students.output();
 
-  // Call the plus method to add a new student
   students.plus({
     "first": "Emily",
     "last": "Johnson",
@@ -54,7 +50,6 @@ void main() {
   print("\n");
   students.output();
 
-  // Call the remove method to remove a student by first name
   students.remove("Steve");
   print("\n");
   students.output();
